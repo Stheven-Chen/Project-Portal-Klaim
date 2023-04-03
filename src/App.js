@@ -33,7 +33,7 @@ function App() {
           content={[
             <component.Row col={[<component.Input name="No Polis" type="text" value={noPolis} onChange={handleNoPolisChange} Lcls="form-label" Icls="col-md-12 form-control rounded-4" />]} className="py-4 px-5" />,
             <component.Row col={[<component.Input name="Nama Tertanggung" type="text" value={namaTertanggung} onChange={handleNamaTertanggungChange} Lcls="form-label" Icls="col-md-12 form-control rounded-4" />]} className="py-4 px-5" />,
-            <component.Row col={[<component.Div bs="col-md-4" content="&nbsp;" />, <component.Btn type="submit" val="Lanjutkan" cls="col-md-4 btn btn-warning rounded-4" id="startBtn" />]} className="py-4 px-5" />,
+            <component.Row col={[<component.Div bs="col-md-4" content="&nbsp;" />, <component.Btn type="submit" val="Ajukan Klaim" cls="col-md-4 btn btn-warning rounded-4" id="startBtn" />]} className="py-4 px-5" />,
             <component.Row col={[<p> atau </p>]} className="text-center" />,
             <component.Row
               col={[

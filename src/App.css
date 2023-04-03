@@ -6,6 +6,10 @@ header{
 header img{
   height: 50px;
 }
+header .col-md-12{
+  display: flex;
+  justify-content: space-between ;
+}
 
 div #box{
   width: 60%;

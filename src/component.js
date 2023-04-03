@@ -3,10 +3,8 @@ import React from "react";
 export const Header = ({ cls }) => {
   return (
     <header className={cls}>
-      <div className="col-md-6">
+      <div className="col-md-12">
         <img src="img/logoputih.png" alt="logoPutih" />
-      </div>
-      <div className="col-md-6">
         <img src="img/logoOjk.png" alt="logoojk" />
       </div>
     </header>
