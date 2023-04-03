@@ -1,18 +1,41 @@
-header{
+header {
   background-color: #0177b9;
   height: 67px;
 }
 
-header img{
+header img {
   height: 50px;
-}
-header .col-md-12{
-  display: flex;
-  justify-content: space-between ;
+  padding-top: 7px;
 }
 
-div #box{
+header .col-md-12 {
+  display: flex;
+  justify-content: space-between;
+}
+
+div #box {
   width: 60%;
   height: 450px;
+}
 
+@media only screen and (max-width: 768px) {
+  header {
+    width: 100%;
+  }
+  header img {
+    padding-top:11px;
+    height: 50px;
+  }
+  
+  header img#logo1 {
+    display:block;
+  }
+  
+  header img#logo2 {
+    display: none;
+  }
+  
+  div#box {
+    width: 90%;
+  }
 }

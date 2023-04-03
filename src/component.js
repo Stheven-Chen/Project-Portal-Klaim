@@ -1,11 +1,14 @@
 import React from "react";
 
+
+const logo = require('./img/logoputih.png') ;
+const logo2 = require('./img/logo2.png') ;
 export const Header = ({ cls }) => {
   return (
     <header className={cls}>
       <div className="col-md-12">
-        <img src="img/logoputih.png" alt="logoPutih" />
-        <img src="img/logoOjk.png" alt="logoojk" />
+        <img id="logo1" src={logo} alt="logoPutih" />
+        <img id="logo2" src={logo2} alt="logoojk" />
       </div>
     </header>
   );
