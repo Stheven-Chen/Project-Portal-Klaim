@@ -6,3 +6,9 @@ header{
 header img{
   height: 50px;
 }
+
+div #box{
+  width: 60%;
+  height: 450px;
+
+}
