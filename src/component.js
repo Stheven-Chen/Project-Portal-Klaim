@@ -46,3 +46,15 @@ export const Row = ({ col, className }) => {
 export const Btn = ({ val, cls, id }) => {
   return <input className={cls} type="submit" id={id} name="submit" value={val} key={id} />;
 };
+
+export const Card =({noPolis, insured})=>{
+  return(
+    <div className="card" style={{width: '18rem'}}>
+    <div className="card-body">
+    <h5 className="card-title">{insured}</h5>
+    <h6 className="card-subtitle mb-2 text-body-secondary">{noPolis}</h6>
+    <p className="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, ipsum!</p>
+  </div>
+</div>
+  )
+}

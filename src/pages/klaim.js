@@ -12,6 +12,12 @@ const Klaim = () => {
     navigate("/");
   };
 
+  const see = (event) =>{
+    event.preventDefault();
+    console.log('See');
+    navigate("/data")
+  };
+
   return (
     <>
       <component.Header cls="container-fluid d-flex justify-content-between" />
@@ -23,7 +29,8 @@ const Klaim = () => {
         content={[
           <component.Row
             col={[
-                <button className='col-md-12 rounded-4 btn btn-primary' onClick={handleClick}>Take Me Back </button>
+                <button className='col-md-12 rounded-4 btn btn-primary' onClick={handleClick}>Take Me Back </button>,
+                <button className='col-md-12 rounded-4 btn btn-danger mt-5' onClick={see}>See What You Did </button>
             ]}
             className="py-4 px-5"
           />,

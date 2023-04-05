@@ -24,6 +24,7 @@ if($conn->connect_error){
 $noPolis = $data['noPolis'];
 $insured = $data['insured'];
 
+if(!empty($noPolis)&&!empty($insured)){
 //query 
 $query = "INSERT INTO test (noPolis, insured) VALUES (?, ?)";
 $stmt = $conn->prepare($query);
@@ -38,4 +39,7 @@ if($conn->errno){
 $conn->close();
 
 echo json_encode(array('message' => 'Data inserted successfully.'));
+}else{
+    echo json_encode(array('message' => 'No data provided.'));
+}
 ?>

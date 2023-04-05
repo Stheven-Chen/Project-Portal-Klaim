@@ -22,7 +22,9 @@ const Login = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    (!noPolis || !namaTertanggung) ? 
+      alert("Fulfill the Form"):
+      event.preventDefault()
     const data = { noPolis, insured: namaTertanggung };
     fetch("http://localhost/learn/react/portal-klaim/portal-klaim/src/server/add.php", {
       method: "POST",
@@ -40,6 +42,8 @@ const Login = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
+    
+    
   };
   
 
