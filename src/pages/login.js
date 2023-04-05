@@ -22,9 +22,21 @@ const Login = () => {
   };
 
   const handleSubmit = (event) => {
-    (!noPolis || !namaTertanggung) ? 
-      alert("Fulfill the Form"):
-      event.preventDefault()
+    event.preventDefault();
+  
+    const noPolisRegex = /^[0-9]{11}$/;
+    const namaTertanggungRegex = /^[A-Za-z\s]+$/;
+  
+    if (!noPolisRegex.test(noPolis)) {
+      alert("Policy number must be 11 digits and contain only numbers.");
+      return;
+    }
+  
+    if (!namaTertanggungRegex.test(namaTertanggung)) {
+      alert("Insured name must contain only letters and spaces.");
+      return;
+    }
+  
     const data = { noPolis, insured: namaTertanggung };
     fetch("http://localhost/learn/react/portal-klaim/portal-klaim/src/server/add.php", {
       method: "POST",
@@ -36,15 +48,14 @@ const Login = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        
+  
         navigate("/klaim");
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-    
-    
   };
+  
   
 
 
