@@ -4,6 +4,11 @@ import * as component from "./../component.js";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  // fetch("http://localhost/learn/react/portal-klaim/portal-klaim/src/server/index.php")
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data))
+  //   .catch((error) => console.error(error));
+
   const [noPolis, setNoPolis] = React.useState("");
   const [namaTertanggung, setNamaTertanggung] = React.useState("");
   const navigate = useNavigate();
@@ -17,18 +22,31 @@ const Login = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // prevent form from submitting and refreshing the page
-    // do something with noPolis and namaTertanggung, e.g. send to server
-    console.log(`No Polis: ${noPolis}`);
-    console.log(`Nama Tertanggung: ${namaTertanggung}`);
-    navigate("/klaim");
+    event.preventDefault()
+    const data = { noPolis, insured: namaTertanggung };
+    fetch("http://localhost/learn/react/portal-klaim/portal-klaim/src/server/add.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        
+        navigate("/klaim");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
+  
+
 
   return (
     <>
-      <component.Header
-        cls="container-fluid d-flex justify-content-between"
-      />
+      <component.Header cls="container-fluid d-flex justify-content-between" />
       <component.Div
         bs="row text-center py-3"
         id="judul"
@@ -80,7 +98,7 @@ const Login = () => {
             <component.Row col={[<p> atau </p>]} className="text-center" />,
             <component.Row
               col={[
-                <a className="icon-link" href="#">
+                <a className="icon-link" href="/">
                   {" "}
                   cek status klaim{" "}
                 </a>,

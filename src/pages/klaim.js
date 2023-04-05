@@ -8,7 +8,7 @@ const Klaim = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    console.log('yeay im back home')
+    console.log('yeay i\'m going back home')
     navigate("/");
   };
 
